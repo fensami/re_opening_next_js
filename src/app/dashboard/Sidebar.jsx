@@ -1,6 +1,7 @@
-import Link from "next/link";
+import NavLink from "@/components/NavLink";
 
-const NavLink =[
+// import NavLink from "@/components/NavLink";
+const navLinks =[
   {path: '/dashboard',
     title: 'Dashboard' 
   },
@@ -20,8 +21,8 @@ const Sidebar = () => {
       <h1 className="text-3xl font-semibold">DashBoard</h1>
       <ul>
         {
-          NavLink.map(({path, title}) => <li key={path}>
-            <Link href={path}>{title}</Link>
+          navLinks.map(({path, title}) => <li key={path}>
+            <NavLink exact activeClassName='text-blue-500' href={path}>{title}</NavLink>
           </li>)
         }
       </ul>

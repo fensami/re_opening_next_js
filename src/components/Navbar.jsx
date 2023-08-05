@@ -1,6 +1,9 @@
-import Link from "next/link";
+// import NavLink from "./NavLink";
 
-const NavLink  =[
+// import NavLinkUp from "./NavLinkUp";
+
+import NavLink from "./NavLink";
+const navLinks  =[
   {
     path: '/',
     title: 'home',
@@ -30,8 +33,8 @@ const Navbar = () => {
         <h1 className="text-xl font-bold">Re opening Next js</h1>
       <ul className="flex items-center justify-between ">
         {
-          NavLink.map(({path, title}) => <li className="mx-2" key={path}>
-            <Link href={path}>{title}</Link>
+          navLinks.map(({path, title}) => <li className="mx-2" key={path}>
+            <NavLink exact={path === '/'} activeClassName='bg-blue-500' href={path}>{title}</NavLink>
           </li>) 
         }
       </ul>
